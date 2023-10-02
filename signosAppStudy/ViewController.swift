@@ -56,6 +56,19 @@ class ViewController: UITableViewController {
         return cell
     }
     
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    tableView.deselectRow(at: indexPath, animated: true)
+    
+    let alertController = UIAlertController(title: "Significado do Signo", message: significadosSignos[indexPath.row], preferredStyle: .alert)
+    
+    let confirmAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+    
+    alertController.addAction(confirmAction)
+    
+    present(alertController, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
     }
